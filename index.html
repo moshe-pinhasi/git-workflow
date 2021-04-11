@@ -48,6 +48,7 @@
         max-width: 70%;
         font-family: sans-serif;
         background-color: #e4e3e3;
+        cursor: pointer;
       }
 
       hr {
@@ -58,6 +59,7 @@
       input {
         opacity: 0;
         position: absolute;
+        cursor: pointer;
       }
 
       .notify {
@@ -192,6 +194,25 @@
         </code>
       </div>
 
+      <h2>
+        <a target="_blank"href="https://git-scm.com/docs/git-stash">git stash</a>
+      </h2>
+      <div class="example">
+        <label>Stash the changes in a dirty working directory away</label>
+        <code onclick="copyToClip(this)">
+          <input type="text" value="git stash">
+          > git stash
+        </code>
+      </div>
+
+      <div class="example">
+        <label>Remove a single stashed state from the stash list </label>
+        <code onclick="copyToClip(this)">
+          <input type="text" value="git stash pop">
+          > git stash pop
+        </code>
+      </div>
+      
       <div class="notify" id="notify">
         Copied!
       </div>
