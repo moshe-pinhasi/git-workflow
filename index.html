@@ -3,13 +3,8 @@
     <title>git workflow</title>
     <script>
       function copyToClip(el) {
-        // debugger
-        console.log(el)        
-
         /* Get the text field */
         var copyText = el.children[0];
-        // var copyText = document.getElementById(el.id);
-        // console.log(copyText)        
 
         // /* Select the text field */
         copyText.select();
@@ -19,134 +14,175 @@
         document.execCommand("copy");
 
         // /* Alert the copied text */
-        // alert("Copied the text: " + copyText.value);
+        var notify = document.getElementById("notify");
+        notify.classList.toggle('show')
+
+        setTimeout(function () {
+          notify.classList.toggle('show')
+        }, 2000)
       }
     </script>
 
     <style>
+      .app {
+        padding: 10px 40px;
+      }
+
+      .example {
+        width: 500px;
+      }
+
       .example label {
-          font-family: sans-serif;
+        font-family: sans-serif;
       }
 
       .example code{
         display: block;
         padding: 10px 15px;
-        border: 1px solid #000000;
+        border: 1px solid #cac7c7;
         border-radius: 4px;
         margin: 10px 0px;
         max-width: 70%;
         font-family: sans-serif;
-        background-color: #b3b3b3;
+        background-color: #e4e3e3;
       }
 
       hr {
         max-width: 70%;
         margin: 20px 0px;
       }
+
+      input {
+        opacity: 0;
+        position: absolute;
+      }
+
+      .notify {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 200px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        color: #fff;
+        background-color: hsl(141, 53%, 53%);
+        border-radius: 4px;
+        opacity: 0;
+        transition: all .6s;
+      }
+
+      .notify.show {
+        opacity: 1;
+      }
     </style>
   </head>
   <body>
-    <h1>
-      Hello mister GIT workfow
-    </h1>
+    <div class="app">
+      <h1>Hello mister GIT workfow</h1>
 
-    <hr />
+      <hr />
 
-    <h3>
-      <a href="https://git-scm.com/docs/git-branch">git branch</a>
-    </h3>
+      <h3>
+        <a href="https://git-scm.com/docs/git-branch">git branch</a>
+      </h3>
 
-    <div class="example">
-      <label>list the branches</label>
-      <code onclick="copyToClip(this)">
-        <input type="text" value="git branch">
-        > git branch
-      </code>
+      <div class="example">
+        <label>list the branches</label>
+        <code onclick="copyToClip(this)">
+          <input type="text" value="git branch">
+          > git branch
+        </code>
+      </div>
+
+      <div class="example">
+        <label>list the branches</label>
+        <code onclick="copyToClip(this)">
+          <input type="text" value="git branch [name]">
+          > git branch [name]
+        </code>
+      </div>
+
+      <div class="example">
+        <label>list the branches</label>
+        <code onclick="copyToClip(this)">
+          <input type="text" value="git branch -D [name]">
+          > git branch -D [name]
+        </code>
+      </div>
+
+      <hr />
+      
+      <h3>
+        <a href="https://git-scm.com/docs/git-checkout">git checkout</a>
+      </h3>
+      
+      <div class="example">
+        <label>list the branches</label>
+        <code onclick="copyToClip(this)">
+          <input type="text" value="git checkout [name]">
+          > git checkout [name]
+        </code>
+      </div>
+
+      <div class="example">
+        <label>list the branches</label>
+        <code onclick="copyToClip(this)">
+          <input type="text" value="git checkout -b [name]">
+          > git checkout -b [name]
+        </code>
+      </div>
+
+      <h3>
+        <a href="https://git-scm.com/docs/git-merge">git merge</a>
+      </h3>
+
+      <div class="example">
+        <label>list the branches</label>
+        <code onclick="copyToClip(this)">
+          <input type="text" value="git merge [name]">
+          > git merge [name]
+        </code>
+      </div>
+
+      <h3>
+        <a href="https://git-scm.com/docs/git-push">git push</a>
+      </h3>
+
+      <div class="example">
+        <label>list the branches</label>
+        <code onclick="copyToClip(this)">
+          <input type="text" value="git push origin [name] ">
+          > git push origin [name] 
+        </code>
+      </div>
+
+      <h3>
+        <a href="https://git-scm.com/docs/git-pull">git pull</a>
+      </h3>
+      <div class="example">
+        <label>list the branches</label>
+        <code onclick="copyToClip(this)">
+          <input type="text" value="git pull origin [name] ">
+          > git pull origin [name]
+        </code>
+      </div>
+
+      <h3>
+        <a href="https://git-scm.com/docs/git-rebase">git rebase</a>
+      </h3>
+      <div class="example">
+        <label>list the branches</label>
+        <code onclick="copyToClip(this)">
+          <input type="text" value="git rebase [name] ">
+          > git rebase [name]
+        </code>
+      </div>
+
+      <div class="notify" id="notify">
+        Copied!
+      </div>
     </div>
-
-    <div class="example">
-      <label>list the branches</label>
-      <code onclick="copyToClip(this)">
-        <input type="text" value="git branch [name]">
-        > git branch [name]
-      </code>
-    </div>
-
-    <div class="example">
-      <label>list the branches</label>
-      <code onclick="copyToClip(this)">
-        <input type="text" value="git branch -D [name]">
-        > git branch -D [name]
-      </code>
-    </div>
-
-    <hr />
-    
-    <h3>
-      <a href="https://git-scm.com/docs/git-checkout">git checkout</a>
-    </h3>
-    
-    <div class="example">
-      <label>list the branches</label>
-      <code onclick="copyToClip(this)">
-        <input type="text" value="git checkout [name]">
-        > git checkout [name]
-      </code>
-    </div>
-
-    <div class="example">
-      <label>list the branches</label>
-      <code onclick="copyToClip(this)">
-        <input type="text" value="git checkout -b [name]">
-        > git checkout -b [name]
-      </code>
-    </div>
-
-    <h3>
-      <a href="https://git-scm.com/docs/git-merge">git merge</a>
-    </h3>
-
-    <div class="example">
-      <label>list the branches</label>
-      <code onclick="copyToClip(this)">
-        <input type="text" value="git merge [name]">
-        > git merge [name]
-      </code>
-    </div>
-
-    <h3>
-      <a href="https://git-scm.com/docs/git-push">git push</a>
-    </h3>
-
-    <div class="example">
-      <label>list the branches</label>
-      <code onclick="copyToClip(this)">
-        <input type="text" value="git push origin [name] ">
-        > git push origin [name] 
-      </code>
-    </div>
-
-    <h3>
-      <a href="https://git-scm.com/docs/git-pull">git pull</a>
-    </h3>
-    <div class="example">
-      <label>list the branches</label>
-      <code onclick="copyToClip(this)">
-        <input type="text" value="git pull origin [name] ">
-        > git pull origin [name]
-      </code>
-    </div>
-
-    <h3>
-      <a href="https://git-scm.com/docs/git-rebase">git rebase</a>
-    </h3>
-    <div class="example">
-      <label>list the branches</label>
-      <code onclick="copyToClip(this)">
-        <input type="text" value="git rebase [name] ">
-        > git rebase [name]
-      </code>
-    </div>
-
   </body>
 </html>
