@@ -1,6 +1,27 @@
 <html>
   <head>
     <title>git workflow</title>
+    <script>
+      function copyToClip(el) {
+        // debugger
+        console.log(el)        
+
+        /* Get the text field */
+        var copyText = el.children[0];
+        // var copyText = document.getElementById(el.id);
+        // console.log(copyText)        
+
+        // /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        // /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        // /* Alert the copied text */
+        // alert("Copied the text: " + copyText.value);
+      }
+    </script>
 
     <style>
       .example label {
@@ -32,17 +53,26 @@
 
     <div class="example">
       <label>list the branches</label>
-      <code>> git branch</code>
+      <code onclick="copyToClip(this)">
+        <input type="text" value="git branch">
+        > git branch
+      </code>
     </div>
 
     <div class="example">
       <label>list the branches</label>
-      <code>> git branch [name]</code>
+      <code onclick="copyToClip(this)">
+        <input type="text" value="git branch [name]">
+        > git branch [name]
+      </code>
     </div>
 
     <div class="example">
       <label>list the branches</label>
-      <code>> git branch -D [name]</code>
+      <code onclick="copyToClip(this)">
+        <input type="text" value="git branch -D [name]">
+        > git branch -D [name]
+      </code>
     </div>
 
     <hr />
@@ -53,12 +83,18 @@
     
     <div class="example">
       <label>list the branches</label>
-      <code>> git checkout [name]</code>
+      <code onclick="copyToClip(this)">
+        <input type="text" value="git checkout [name]">
+        > git checkout [name]
+      </code>
     </div>
 
     <div class="example">
       <label>list the branches</label>
-      <code>> git checkout -b [name]</code>
+      <code onclick="copyToClip(this)">
+        <input type="text" value="git checkout -b [name]">
+        > git checkout -b [name]
+      </code>
     </div>
 
     <h3>
@@ -67,7 +103,10 @@
 
     <div class="example">
       <label>list the branches</label>
-      <code>> git merge [name]</code>
+      <code onclick="copyToClip(this)">
+        <input type="text" value="git merge [name]">
+        > git merge [name]
+      </code>
     </div>
 
     <h3>
@@ -76,7 +115,10 @@
 
     <div class="example">
       <label>list the branches</label>
-      <code>> git push origin [name] </code>
+      <code onclick="copyToClip(this)">
+        <input type="text" value="git push origin [name] ">
+        > git push origin [name] 
+      </code>
     </div>
 
     <h3>
@@ -84,7 +126,10 @@
     </h3>
     <div class="example">
       <label>list the branches</label>
-      <code>> git pull origin [name]</code>
+      <code onclick="copyToClip(this)">
+        <input type="text" value="git pull origin [name] ">
+        > git pull origin [name]
+      </code>
     </div>
 
     <h3>
@@ -92,9 +137,11 @@
     </h3>
     <div class="example">
       <label>list the branches</label>
-      <code>> git rebase [name]</code>
+      <code onclick="copyToClip(this)">
+        <input type="text" value="git rebase [name] ">
+        > git rebase [name]
+      </code>
     </div>
 
-    <!-- <code>git branch </code> -->
   </body>
 </html>
