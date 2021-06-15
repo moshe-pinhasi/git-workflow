@@ -3,7 +3,23 @@
     <title>git workflow</title>
     <script>
       function copyToClip(el) {
-        console.log('copied!')
+        /* Get the text field */
+        var copyText = el.children[0];
+
+        // /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        // /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        // /* Alert the copied text */
+        var notify = document.getElementById("notify");
+        notify.classList.toggle("show");
+
+        setTimeout(function () {
+          notify.classList.toggle("show");
+        }, 2000);
       }
     </script>
 
@@ -24,7 +40,7 @@
         margin-bottom: 7px;
       }
 
-      .example code{
+      .example code {
         display: block;
         padding: 10px 15px;
         border: 1px solid #cac7c7;
@@ -59,13 +75,12 @@
         background-color: hsl(141, 53%, 53%);
         border-radius: 4px;
         opacity: 0;
-        transition: all .6s;
+        transition: all 0.6s;
       }
 
       .notify.show {
         opacity: 1;
       }
-
     </style>
   </head>
   <body>
@@ -75,13 +90,15 @@
       <hr />
 
       <h2>
-        <a target="_blank"href="https://git-scm.com/docs/git-branch">git branch</a>
+        <a target="_blank" href="https://git-scm.com/docs/git-branch"
+          >git branch</a
+        >
       </h2>
 
       <div class="example">
         <label>List branches</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git branch">
+          <input type="text" value="git branch" />
           > git branch
         </code>
       </div>
@@ -89,7 +106,7 @@
       <div class="example">
         <label>Create new branch</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git branch [name]">
+          <input type="text" value="git branch [name]" />
           > git branch [name]
         </code>
       </div>
@@ -97,7 +114,7 @@
       <div class="example">
         <label>Delete branch</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git branch -D [name]">
+          <input type="text" value="git branch -D [name]" />
           > git branch -D [name]
         </code>
       </div>
@@ -105,19 +122,21 @@
       <div class="example">
         <label>Branch rename</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git branch -M [name]">
+          <input type="text" value="git branch -M [name]" />
           > git branch -M [name]
         </code>
       </div>
 
       <h2>
-        <a target="_blank"href="https://git-scm.com/docs/git-checkout">git checkout</a>
+        <a target="_blank" href="https://git-scm.com/docs/git-checkout"
+          >git checkout</a
+        >
       </h2>
-      
+
       <div class="example">
         <label>Switch branches</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git checkout [name]">
+          <input type="text" value="git checkout [name]" />
           > git checkout [name]
         </code>
       </div>
@@ -125,75 +144,83 @@
       <div class="example">
         <label>Create and switch branch</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git checkout -b [name]">
+          <input type="text" value="git checkout -b [name]" />
           > git checkout -b [name]
         </code>
       </div>
 
       <h2>
-        <a target="_blank"href="https://git-scm.com/docs/git-merge">git merge</a>
+        <a target="_blank" href="https://git-scm.com/docs/git-merge"
+          >git merge</a
+        >
       </h2>
 
       <div class="example">
         <label>Merges the 2 branches histories together</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git merge [name]">
+          <input type="text" value="git merge [name]" />
           > git merge [name]
         </code>
       </div>
 
       <h2>
-        <a target="_blank"href="https://git-scm.com/docs/git-push">git push</a>
+        <a target="_blank" href="https://git-scm.com/docs/git-push">git push</a>
       </h2>
 
       <div class="example">
         <label>Update remote branch</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git push origin [name] ">
-          > git push origin [name] 
+          <input type="text" value="git push origin [name] " />
+          > git push origin [name]
         </code>
       </div>
 
       <h2>
-        <a target="_blank"href="https://git-scm.com/docs/git-pull">git pull</a>
+        <a target="_blank" href="https://git-scm.com/docs/git-pull">git pull</a>
       </h2>
       <div class="example">
         <label>Fetch from remote branch</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git pull origin [name] ">
+          <input type="text" value="git pull origin [name] " />
           > git pull origin [name]
         </code>
       </div>
 
       <h2>
-        <a target="_blank"href="https://git-scm.com/docs/git-rebase">git rebase</a>
+        <a target="_blank" href="https://git-scm.com/docs/git-rebase"
+          >git rebase</a
+        >
       </h2>
       <div class="example">
         <label>Reapply commits on top of another base tip</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git rebase [name] ">
+          <input type="text" value="git rebase [name] " />
           > git rebase [name]
         </code>
       </div>
 
       <h2>
-        <a target="_blank"href="https://git-scm.com/docs/git-fetch">git fetch</a>
+        <a target="_blank" href="https://git-scm.com/docs/git-fetch"
+          >git fetch</a
+        >
       </h2>
       <div class="example">
         <label>Download all branches from origin</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git fetch">
+          <input type="text" value="git fetch" />
           > git fetch
         </code>
       </div>
 
       <h2>
-        <a target="_blank"href="https://git-scm.com/docs/git-stash">git stash</a>
+        <a target="_blank" href="https://git-scm.com/docs/git-stash"
+          >git stash</a
+        >
       </h2>
       <div class="example">
         <label>Stash the changes in a dirty working directory away</label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git stash">
+          <input type="text" value="git stash" />
           > git stash
         </code>
       </div>
@@ -201,14 +228,12 @@
       <div class="example">
         <label>Remove a single stashed state from the stash list </label>
         <code onclick="copyToClip(this)">
-          <input type="text" value="git stash pop">
+          <input type="text" value="git stash pop" />
           > git stash pop
         </code>
       </div>
-      
-      <div class="notify" id="notify">
-        Copied!
-      </div>
+
+      <div class="notify" id="notify">Copied!</div>
     </div>
   </body>
 </html>
