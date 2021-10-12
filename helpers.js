@@ -26,11 +26,12 @@ function copyToClip(el) {
 // <h4>Hello mister GIT workfow</h4>
 // <h1>Hello mister GIT workfow</h1>
 
-// step 3
+// conflict
+// step 3 
 // subheader
 // <p>A list of the most used git commands</p>
 
-// step 4
+// step 4 
 // wrap the title & subtitle in header tag
 <header>
   <h1>Hello mister GIT workfow</h1>
