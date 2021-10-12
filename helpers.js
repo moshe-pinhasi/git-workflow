@@ -1,3 +1,5 @@
+
+// step 1
 function copyToClip(el) {
   /* Get the text field */
   var copyText = el.children[0];
@@ -19,9 +21,18 @@ function copyToClip(el) {
 }
 
 
+// step 2
 // headers
 // <h4>Hello mister GIT workfow</h4>
 // <h1>Hello mister GIT workfow</h1>
 
+// step 3
 // subheader
 // <p>A list of the most used git commands</p>
+
+// step 4
+// wrap the title & subtitle in header tag
+<header>
+  <h1>Hello mister GIT workfow</h1>
+  <p>A list of the most used git commands</p>
+</header>
