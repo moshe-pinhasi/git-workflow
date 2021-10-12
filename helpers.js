@@ -36,4 +36,4 @@ function copyToClip(el) {
 <header>
   <h1>Hello mister GIT workfow</h1>
   <p>A list of the most used git commands</p>
-</header>
+</header>  
