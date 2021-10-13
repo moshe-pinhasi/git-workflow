@@ -1,6 +1,10 @@
 
 // step 1
 function copyToClip(el) {
+  console.log('copied!')
+}
+
+function copyToClip(el) {
   /* Get the text field */
   var copyText = el.children[0];
 
