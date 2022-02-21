@@ -27,7 +27,11 @@ function copyToClip(el) {
 
 // step 2
 // headers
+// replace:
+// <div>Hello mister GIT workfow</div>
+// with
 // <h4>Hello mister GIT workfow</h4>
+// and then:
 // <h1>Hello mister GIT workfow</h1>
 
 // conflict
